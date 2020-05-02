@@ -19,13 +19,14 @@ public class RandomStringGenerator {
         }
         FileWriter fileWriter = new FileWriter(file.getAbsoluteFile());
         BufferedWriter bw = new BufferedWriter(fileWriter);
-        for (int i = 0; i < 50000 ; i++) {
+        for (int i = 0; i < 10; i++) {
             String str = getRandomString(8);
             bw.write(str + " ");
 //            bw.newLine();
         }
 
         bw.close();
+        fileWriter.close();
         System.out.println("finish");
     }
 

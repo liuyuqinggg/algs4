@@ -56,10 +56,10 @@ public class Selection {
         int n = a.length;
         for (int i = 0; i < n; i++) {
             int min = i;
-            for (int j = i+1; j < n; j++) {
+            for (int j = i+1; j < n; j++) {//找出a[i + i]到a[n]中最小的元素的索引，查找过程值涉及到比较，并没有交换元素
                 if (less(a[j], a[min])) min = j;
             }
-            exch(a, i, min);
+            exch(a, i, min);//交换元素
             assert isSorted(a, 0, i);
         }
         assert isSorted(a);
@@ -119,7 +119,7 @@ public class Selection {
     // is the array sorted from a[lo] to a[hi]
     private static boolean isSorted(Comparable[] a, int lo, int hi) {
         for (int i = lo + 1; i <= hi; i++)
-            if (less(a[i], a[i-1])) return false;
+            if (less(a[i], a[i-1])) return false; //如果后一个小于前一个，则数组不符合升序排序，返回false
         return true;
     }
 
