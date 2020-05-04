@@ -8,7 +8,7 @@ import java.util.Random;
 
 public class RandomStringGenerator {
     public static void main(String[] args) throws IOException {
-        File file = new File("F:\\IDEA\\algs4\\src\\strings.txt");
+        File file = new File("F:\\IDEA\\algs4\\test-data\\strings.txt");
 
         if(file.exists()){
             file.delete();

@@ -25,6 +25,8 @@ import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
 
 import java.util.Comparator;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 /**
  *  The {@code Selection} class provides static methods for sorting an
@@ -151,13 +153,17 @@ public class Selection {
      * @param args the command-line arguments
      */
     public static void main(String[] args) {
-        for (String arg : args) {
-            System.out.println(arg);
-            System.out.println("hahha");
-        }
-        System.out.println("started");
-        String[] a = StdIn.readAllStrings();
-        Selection.sort(a);
-        show(a);
+//        String[] a = StdIn.readAllStrings();
+//        Selection.sort(a);
+//        show(a);
+
+        int[] a = StdIn.readAllInts();
+        /**下面是将基本数组转化为对象数组*/
+        Integer[] ib= IntStream.of(a).boxed().collect(Collectors.toList()).toArray(new Integer[0]);
+        long start = System.currentTimeMillis();
+        Selection.sort(ib);
+        long end = System.currentTimeMillis();
+        show(ib);
+        System.out.println("耗時:"+(end -start) / 1000.0 + "s");
     }
 }
